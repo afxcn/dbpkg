@@ -31,15 +31,15 @@ import (
 )
 
 var (
-	usageTemplate = `ngx is a cli tool for nginx
+	usageTemplate = `dbc is a cli tool for nginx
 Usage:
-	ngx command [arguments]
+	dbc command [arguments]
 
 The commands are:
 {{range .}}{{if .Runnable}}
 	{{.Name | printf "%-11s"}} {{.Short}}{{end}}{{end}}
 
-Use "ngx help [command]" for more information about a command.
+Use "dbc help [command]" for more information about a command.
 
 `
 )
@@ -102,14 +102,14 @@ func help(args []string) {
 		return
 	}
 	if len(args) != 1 {
-		fatalf("usage: ngx help command\n\nToo many arguments given.\n")
+		fatalf("usage: dbc help command\n\nToo many arguments given.\n")
 	}
 
 	arg := args[0]
 	for _, cmd := range commands {
 		if cmd.Name() == arg {
 			if cmd.Runnable() {
-				fmt.Fprintf(os.Stdout, "usage: ngx %s\n", cmd.UsageLine)
+				fmt.Fprintf(os.Stdout, "usage: dbc %s\n", cmd.UsageLine)
 			}
 			data := struct {
 				ConfigDir string
@@ -121,5 +121,5 @@ func help(args []string) {
 		}
 	}
 
-	fatalf("Unknown help topic %q. Run 'ngx help'.\n", arg)
+	fatalf("Unknown help topic %q. Run 'dbc help'.\n", arg)
 }

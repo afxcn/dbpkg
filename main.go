@@ -59,7 +59,7 @@ func main() {
 			return
 		}
 
-		fatalf("Unknown subcommand %q.\nRun 'ngx help' for usage.\n", args[0])
+		fatalf("Unknown subcommand %q.\nRun 'dbc help' for usage.\n", args[0])
 	}
 }
 
