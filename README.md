@@ -1,5 +1,7 @@
 # dbpkg
 
+Working on it, don't use it on production.
+
 ## License
 
 Copyright (C) 2017  ZhiQiang Huang (email: afxcn@dbpkg.com)
